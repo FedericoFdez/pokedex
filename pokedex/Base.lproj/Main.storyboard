@@ -78,11 +78,43 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Race Cell" textLabel="UqV-Ho-tt6" detailTextLabel="2gK-L6-N9x" style="IBUITableViewCellStyleSubtitle" id="bz0-RV-xRb">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Switch Cell" id="F7q-b8-ANp">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F7q-b8-ANp" id="Ubx-5M-VM3">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rO5-Is-fuE">
+                                            <rect key="frame" x="543" y="6" width="51" height="31"/>
+                                            <animations/>
+                                            <connections>
+                                                <action selector="sortByCode:" destination="WFK-2U-vcU" eventType="valueChanged" id="U2i-YL-d4q"/>
+                                            </connections>
+                                        </switch>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ordenar según Pokédex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aj2-zX-oXM">
+                                            <rect key="frame" x="13" y="11" width="184" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstItem="Aj2-zX-oXM" firstAttribute="centerY" secondItem="Ubx-5M-VM3" secondAttribute="centerY" id="2h4-MT-I5a"/>
+                                        <constraint firstItem="rO5-Is-fuE" firstAttribute="trailing" secondItem="Ubx-5M-VM3" secondAttribute="trailingMargin" id="C9X-ha-bJG"/>
+                                        <constraint firstItem="Aj2-zX-oXM" firstAttribute="centerY" secondItem="rO5-Is-fuE" secondAttribute="centerY" id="Lwv-Sb-39N"/>
+                                        <constraint firstItem="Aj2-zX-oXM" firstAttribute="leading" secondItem="Ubx-5M-VM3" secondAttribute="leadingMargin" constant="5" id="YYu-Xr-uqP"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Race Cell" textLabel="UqV-Ho-tt6" detailTextLabel="2gK-L6-N9x" style="IBUITableViewCellStyleSubtitle" id="bz0-RV-xRb">
+                                <rect key="frame" x="0.0" y="136" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bz0-RV-xRb" id="dtP-kK-DVp">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UqV-Ho-tt6">
@@ -110,6 +142,7 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="WFK-2U-vcU" id="uaa-2z-hgW"/>
                             <outlet property="delegate" destination="WFK-2U-vcU" id="jwE-Vn-Rz6"/>

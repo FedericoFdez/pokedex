@@ -20,7 +20,31 @@ class PokedexModel {
     // Array de objetos Type.
     var types: [Type]
     
+    var byCode: Bool = false{
+        didSet{
+            if oldValue==false{
+                for type in types{
+                    type.races.sortInPlace({ (race1:Race, race2:Race) -> Bool in
+                        return race1.code < race2.code
+                    })
+                }
+                print("Ordenando por código")
+            }
+            else {
+                for type in types{
+                    type.races.sortInPlace({ (race1:Race, race2:Race) -> Bool in
+                        return race1.code < race2.code
+                    })
+                }
+                print("Ordenando por nombre")
+            }
+        }
+    }
+    
+    
     init() {
+        print("Creando modelo...")
+        print(String(byCode))
         
         // Cargar los datos desde pokemons.plist
         // y rellenar las propiedades races y types.
