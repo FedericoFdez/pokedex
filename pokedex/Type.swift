@@ -17,13 +17,17 @@ class Type {
     // Nombre del tipo (agua, fuego, electrico, ...)
     var name: String
     
+    // Nombre del fichero con el icono del pokemon más representativo del tipo.
+    var icon: String
+    
     // Todas las razas de este tipo.
     var races: [Race]
     
     // Inicializador de la clase Type
-    init(name: String, races: [Race]) {
+    init(name: String, icon: String, races: [Race]) {
         
         self.name = name
+        self.icon = icon
         self.races = races
     }
     

@@ -23,7 +23,7 @@
             </objects>
             <point key="canvasLocation" x="-1365" y="938"/>
         </scene>
-        <!--Types-->
+        <!--Pokédex-->
         <scene sceneID="TkP-Le-ABy">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="MtX-AX-sdL" customClass="TypesTableViewController" customModule="pokedex" customModuleProvider="target" sceneMemberID="viewController">
@@ -62,7 +62,7 @@
                             <outlet property="delegate" destination="MtX-AX-sdL" id="U6a-2k-EYZ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Types" id="eeR-vZ-riu"/>
+                    <navigationItem key="navigationItem" title="Pokédex" id="eeR-vZ-riu"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ecN-qG-Nb5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

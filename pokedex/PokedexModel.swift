@@ -56,7 +56,7 @@ class PokedexModel {
             racesOfThisType.sortInPlace({ (race1:Race, race2:Race) -> Bool in
                 return race1.name < race2.name
             })
-            types.append(Type(name: name, races: racesOfThisType))
+            types.append(Type(name: name, icon: allIcons[name]!, races: racesOfThisType))
         }
         
         types.sortInPlace({ (type1, type2) -> Bool in

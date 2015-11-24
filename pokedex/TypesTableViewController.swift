@@ -44,7 +44,7 @@ class TypesTableViewController: UITableViewController {
         
         let type = pokedexModel.types[indexPath.row]
         
-        //cell.imageView?.image = UIImage(named: type.icon)
+        cell.imageView?.image = UIImage(named: type.icon)
         cell.textLabel?.text = type.name
         //cell.detailTextLabel?.text = type.name
         
