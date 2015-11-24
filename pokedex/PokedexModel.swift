@@ -23,28 +23,24 @@ class PokedexModel {
     var byCode: Bool = false{
         didSet{
             if oldValue==false{
-                for type in types{
+                for type in self.types{
                     type.races.sortInPlace({ (race1:Race, race2:Race) -> Bool in
-                        return race1.code < race2.code
+                        return Int(race1.code) < Int(race2.code)
                     })
                 }
-                print("Ordenando por código")
             }
             else {
-                for type in types{
+                for type in self.types{
                     type.races.sortInPlace({ (race1:Race, race2:Race) -> Bool in
-                        return race1.code < race2.code
+                        return race1.name < race2.name
                     })
                 }
-                print("Ordenando por nombre")
             }
         }
     }
     
     
     init() {
-        print("Creando modelo...")
-        print(String(byCode))
         
         // Cargar los datos desde pokemons.plist
         // y rellenar las propiedades races y types.
@@ -78,7 +74,7 @@ class PokedexModel {
                 return Race(code: "\(code)", name: "????", icon: "")
             })
             racesOfThisType.sortInPlace({ (race1:Race, race2:Race) -> Bool in
-                return race1.name < race2.name
+                return race1.name < race2.code
             })
             types.append(Type(name: name, icon: allIcons[name]!, races: racesOfThisType))
         }

@@ -72,7 +72,7 @@ class TypeRacesTableViewController: UITableViewController {
                 let cell = sender as? UITableViewCell,
                 let ip = tableView.indexPathForCell(cell) {
                     
-                    wvc.race = type!.races[ip.row]
+                    wvc.race = type!.races[ip.row-1]
                     
                     wvc.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
                     wvc.navigationItem.leftItemsSupplementBackButton = true
@@ -83,16 +83,32 @@ class TypeRacesTableViewController: UITableViewController {
     @IBAction func sortByCode(sender: UISwitch) {
         if (sender.on){
             pokedexModel.byCode = true
+
+            for type in pokedexModel.types{
+                if type.name == self.type!.name{
+                    self.type = type
+                    break
+                }
+            }
             for (var rowNumber=1; rowNumber<type!.races.count + 1; rowNumber++){
                 let indexPath = NSIndexPath(forRow: rowNumber, inSection: 0)
-                tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+                tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
             }
+            
+            //tableView.reloadData()
         }
         else {
             pokedexModel.byCode = false
+            
+            for type in pokedexModel.types{
+                if type.name == self.type!.name{
+                    self.type = type
+                    break
+                }
+            }
             for (var rowNumber=1; rowNumber<type!.races.count + 1; rowNumber++){
                 let indexPath = NSIndexPath(forRow: rowNumber, inSection: 0)
-                tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+                tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
             }
         }
     }

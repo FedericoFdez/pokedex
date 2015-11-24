@@ -271,6 +271,7 @@
 		7A625E671C04764A00FF2C6E /* 249.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7A625D6C1C04764A00FF2C6E /* 249.gif */; };
 		7A625E681C04764A00FF2C6E /* 250.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7A625D6D1C04764A00FF2C6E /* 250.gif */; };
 		7A625E691C04764A00FF2C6E /* 251.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7A625D6E1C04764A00FF2C6E /* 251.gif */; };
+		DFE6822C1C04BE880035E2A0 /* entrenador.png in Resources */ = {isa = PBXBuildFile; fileRef = DFE6822B1C04BE880035E2A0 /* entrenador.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -561,6 +562,7 @@
 		7A625D6C1C04764A00FF2C6E /* 249.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = 249.gif; path = icon/249.gif; sourceTree = "<group>"; };
 		7A625D6D1C04764A00FF2C6E /* 250.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = 250.gif; path = icon/250.gif; sourceTree = "<group>"; };
 		7A625D6E1C04764A00FF2C6E /* 251.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = 251.gif; path = icon/251.gif; sourceTree = "<group>"; };
+		DFE6822B1C04BE880035E2A0 /* entrenador.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = entrenador.png; path = ../../../Downloads/entrenador.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -649,6 +651,7 @@
 		7A625E6A1C04766900FF2C6E /* icon */ = {
 			isa = PBXGroup;
 			children = (
+				DFE6822B1C04BE880035E2A0 /* entrenador.png */,
 				7A625C741C04764700FF2C6E /* 001.gif */,
 				7A625C751C04764700FF2C6E /* 002.gif */,
 				7A625C761C04764700FF2C6E /* 003.gif */,
@@ -1221,6 +1224,7 @@
 				7A625DCB1C04764A00FF2C6E /* 093.gif in Resources */,
 				7A625E5C1C04764A00FF2C6E /* 238.gif in Resources */,
 				7A625E611C04764A00FF2C6E /* 243.gif in Resources */,
+				DFE6822C1C04BE880035E2A0 /* entrenador.png in Resources */,
 				7A625DEF1C04764A00FF2C6E /* 129.gif in Resources */,
 				7A625D931C04764A00FF2C6E /* 037.gif in Resources */,
 				7A625DA51C04764A00FF2C6E /* 055.gif in Resources */,
@@ -1520,6 +1524,7 @@
 				7A625C591C0453A700FF2C6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7A625C5A1C0453A700FF2C6E /* Build configuration list for PBXNativeTarget "pokedexTests" */ = {
 			isa = XCConfigurationList;
@@ -1528,6 +1533,7 @@
 				7A625C5C1C0453A700FF2C6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7A625C5D1C0453A700FF2C6E /* Build configuration list for PBXNativeTarget "pokedexUITests" */ = {
 			isa = XCConfigurationList;
@@ -1536,6 +1542,7 @@
 				7A625C5F1C0453A700FF2C6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
