@@ -23,12 +23,29 @@ class Type {
     // Todas las razas de este tipo.
     var races: [Race]
     
+    var byCode: Bool {
+        didSet{
+            if oldValue==false{
+                races.sortInPlace({ (race1:Race, race2:Race) -> Bool in
+                    return Int(race1.code) < Int(race2.code)
+                })
+            }
+            else {
+                races.sortInPlace({ (race1:Race, race2:Race) -> Bool in
+                    return race1.name < race2.name
+                })
+            }
+        }
+    }
+
+    
     // Inicializador de la clase Type
-    init(name: String, icon: String, races: [Race]) {
+    init(name: String, icon: String, races: [Race], byCode: Bool) {
         
         self.name = name
         self.icon = icon
         self.races = races
+        self.byCode = false
     }
     
 }

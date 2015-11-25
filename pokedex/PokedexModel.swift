@@ -20,26 +20,6 @@ class PokedexModel {
     // Array de objetos Type.
     var types: [Type]
     
-    var byCode: Bool = false{
-        didSet{
-            if oldValue==false{
-                for type in self.types{
-                    type.races.sortInPlace({ (race1:Race, race2:Race) -> Bool in
-                        return Int(race1.code) < Int(race2.code)
-                    })
-                }
-            }
-            else {
-                for type in self.types{
-                    type.races.sortInPlace({ (race1:Race, race2:Race) -> Bool in
-                        return race1.name < race2.name
-                    })
-                }
-            }
-        }
-    }
-    
-    
     init() {
         
         // Cargar los datos desde pokemons.plist
@@ -76,7 +56,7 @@ class PokedexModel {
             racesOfThisType.sortInPlace({ (race1:Race, race2:Race) -> Bool in
                 return race1.name < race2.code
             })
-            types.append(Type(name: name, icon: allIcons[name]!, races: racesOfThisType))
+            types.append(Type(name: name, icon: allIcons[name]!, races: racesOfThisType, byCode: false))
         }
         
         types.sortInPlace({ (type1, type2) -> Bool in

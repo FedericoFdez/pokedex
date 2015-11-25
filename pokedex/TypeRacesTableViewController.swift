@@ -82,14 +82,8 @@ class TypeRacesTableViewController: UITableViewController {
     
     @IBAction func sortByCode(sender: UISwitch) {
         if (sender.on){
-            pokedexModel.byCode = true
-
-            for type in pokedexModel.types{
-                if type.name == self.type!.name{
-                    self.type = type
-                    break
-                }
-            }
+            self.type!.byCode = true
+            
             for (var rowNumber=1; rowNumber<type!.races.count + 1; rowNumber++){
                 let indexPath = NSIndexPath(forRow: rowNumber, inSection: 0)
                 tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
@@ -98,14 +92,8 @@ class TypeRacesTableViewController: UITableViewController {
             //tableView.reloadData()
         }
         else {
-            pokedexModel.byCode = false
+            self.type!.byCode = false
             
-            for type in pokedexModel.types{
-                if type.name == self.type!.name{
-                    self.type = type
-                    break
-                }
-            }
             for (var rowNumber=1; rowNumber<type!.races.count + 1; rowNumber++){
                 let indexPath = NSIndexPath(forRow: rowNumber, inSection: 0)
                 tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
