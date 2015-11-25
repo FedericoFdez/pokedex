@@ -46,7 +46,6 @@ class TypesTableViewController: UITableViewController {
         
         cell.imageView?.image = UIImage(named: type.icon)
         cell.textLabel?.text = type.name
-        //cell.detailTextLabel?.text = type.name
         
         return cell
     }
@@ -57,11 +56,9 @@ class TypesTableViewController: UITableViewController {
         
         if segue.identifier == "Show races" {
             
-            // El destino del segue es el Navigation Controller.
-            // El primer VC apuntado por el Navigation Controller el TypeRacesTableVC.
+            // El destino del segue es el TypeRacesTableVC.
             // sender es la celda de la tabla que disparo el segue.
-            if let nc = segue.destinationViewController as? UINavigationController,
-                let rvc = nc.topViewController as? TypeRacesTableViewController,
+            if let rvc = segue.destinationViewController as? TypeRacesTableViewController,
                 let cell = sender as? UITableViewCell,
                 let ip = tableView.indexPathForCell(cell) {
                     

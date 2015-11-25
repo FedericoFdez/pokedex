@@ -4,7 +4,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -54,10 +53,7 @@
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
-                                    <segue destination="wQS-6k-WpM" kind="showDetail" identifier="Show races" id="Hiq-ex-Gbe">
-                                        <segue key="commit" inheritsFrom="parent" id="hRK-R9-m3z"/>
-                                        <segue key="preview" inheritsFrom="commit" id="VKX-up-8Cx"/>
-                                    </segue>
+                                    <segue destination="WFK-2U-vcU" kind="show" identifier="Show races" id="1vn-p4-VJH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -156,24 +152,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1mU-Bi-01L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1037" y="125"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="tUN-pK-9cV">
-            <objects>
-                <navigationController id="wQS-6k-WpM" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j0g-5g-I0T">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="WFK-2U-vcU" kind="relationship" relationship="rootViewController" id="7hd-yU-iS0"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="F9N-iF-v8F" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="269" y="125"/>
+            <point key="canvasLocation" x="221" y="125"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="bPp-we-tZH">
@@ -243,7 +222,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Hiq-ex-Gbe"/>
         <segue reference="tnO-Lh-WD4"/>
     </inferredMetricsTieBreakers>
 </document>
