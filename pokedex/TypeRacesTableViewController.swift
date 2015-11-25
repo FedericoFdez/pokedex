@@ -38,24 +38,40 @@ class TypeRacesTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return pokedexModel.NUM_GENERATIONS + 1
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return type!.races.count + 1
+        switch section{
+        case 1: return self.type!.racesOfGeneration(1).count
+        case 2: return self.type!.racesOfGeneration(2).count
+        default:return 1
+        }
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if indexPath.row == 0{
+        if indexPath.section == 0{
             return tableView.dequeueReusableCellWithIdentifier("Switch Cell", forIndexPath: indexPath)
         }
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Race Cell", forIndexPath: indexPath)
         
-        let race = type!.races[indexPath.row-1]
+        let race = type!.racesOfGeneration(indexPath.section)[indexPath.row]
         
         cell.imageView?.image = UIImage(named: race.icon)
         cell.textLabel?.text = race.name
         cell.detailTextLabel?.text = race.code
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section{
+        case 1: return "1ª Generación: Kanto"
+        case 2: return "2ª Generación: Johto"
+        default:return ""
+        }
     }
     
     // MARK: - Navigation
@@ -84,19 +100,21 @@ class TypeRacesTableViewController: UITableViewController {
         if (sender.on){
             self.type!.byCode = true
             
-            for (var rowNumber=1; rowNumber<type!.races.count + 1; rowNumber++){
-                let indexPath = NSIndexPath(forRow: rowNumber, inSection: 0)
-                tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            for (var sectionNumber=1; sectionNumber<pokedexModel.NUM_GENERATIONS + 1; sectionNumber++){
+                for (var rowNumber=0; rowNumber<type!.racesOfGeneration(sectionNumber).count; rowNumber++){
+                    let indexPath = NSIndexPath(forRow: rowNumber, inSection: sectionNumber)
+                    tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+                }
             }
-            
-            //tableView.reloadData()
         }
         else {
             self.type!.byCode = false
             
-            for (var rowNumber=1; rowNumber<type!.races.count + 1; rowNumber++){
-                let indexPath = NSIndexPath(forRow: rowNumber, inSection: 0)
-                tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            for (var sectionNumber=1; sectionNumber<pokedexModel.NUM_GENERATIONS + 1; sectionNumber++){
+                for (var rowNumber=0; rowNumber<type!.racesOfGeneration(sectionNumber).count; rowNumber++){
+                    let indexPath = NSIndexPath(forRow: rowNumber, inSection: sectionNumber)
+                    tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+                }
             }
         }
     }

@@ -48,4 +48,16 @@ class Type {
         self.byCode = false
     }
     
+    func racesOfGeneration(generation: Int) -> [Race]{
+        var racesOfGeneration: [Race] = []
+        for race in self.races{
+            if Int(race.code)<=151 && generation==1 {
+                racesOfGeneration.append(race)
+            } else if Int(race.code)>151 && generation==2 {
+                racesOfGeneration.append(race)
+            }
+        }
+        return racesOfGeneration
+    }
+    
 }

@@ -20,6 +20,9 @@ class PokedexModel {
     // Array de objetos Type.
     var types: [Type]
     
+    // Num generaciones
+    let NUM_GENERATIONS = 2
+    
     init() {
         
         // Cargar los datos desde pokemons.plist
