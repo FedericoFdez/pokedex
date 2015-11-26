@@ -35,12 +35,25 @@ class TypesTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 2
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section==0{
+            return 1
+        }
         return pokedexModel.types.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Type Cell", forIndexPath: indexPath)
+        
+        if (indexPath.section==0){
+            cell.textLabel?.text = "Todos"
+            cell.imageView?.image = UIImage(named: "pokeball.png")
+            return cell
+        }
         
         let type = pokedexModel.types[indexPath.row]
         
@@ -48,6 +61,13 @@ class TypesTableViewController: UITableViewController {
         cell.textLabel?.text = type.name
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section==1{
+            return "Por tipo"
+        }
+        return ""
     }
     
     // MARK: - Navigation
@@ -62,7 +82,11 @@ class TypesTableViewController: UITableViewController {
                 let cell = sender as? UITableViewCell,
                 let ip = tableView.indexPathForCell(cell) {
                     
-                    rvc.type = pokedexModel.types[ip.row]
+                    if ip.section==0{
+                        rvc.showAll = true
+                    } else {
+                        rvc.type = pokedexModel.types[ip.row]
+                    }
                     
                     rvc.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
                     rvc.navigationItem.leftItemsSupplementBackButton = true

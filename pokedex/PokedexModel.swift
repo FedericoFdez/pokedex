@@ -23,6 +23,21 @@ class PokedexModel {
     // Num generaciones
     let NUM_GENERATIONS = 2
     
+    var byCode: Bool {
+        didSet{
+            if oldValue==false{
+                races.sortInPlace({ (race1:Race, race2:Race) -> Bool in
+                    return Int(race1.code) < Int(race2.code)
+                })
+            }
+            else {
+                races.sortInPlace({ (race1:Race, race2:Race) -> Bool in
+                    return race1.name < race2.name
+                })
+            }
+        }
+    }
+    
     init() {
         
         // Cargar los datos desde pokemons.plist
@@ -35,6 +50,8 @@ class PokedexModel {
         let allNames = plist["nombres"]! as! [String:String]
         let allIcons = plist["iconos"]!  as! [String:String]
         let allTypes = plist["tipos"]!   as! [String:[Int]]
+        
+        self.byCode = false
         
         // Calcular valor de la propiedad self.races.
         races = []
@@ -66,5 +83,17 @@ class PokedexModel {
             return type1.name < type2.name
         })
         
+    }
+    
+    func racesOfGeneration(generation: Int) -> [Race]{
+        var racesOfGeneration: [Race] = []
+        for race in self.races{
+            if Int(race.code)<=151 && generation==1 {
+                racesOfGeneration.append(race)
+            } else if Int(race.code)>151 && generation==2 {
+                racesOfGeneration.append(race)
+            }
+        }
+        return racesOfGeneration
     }
 }

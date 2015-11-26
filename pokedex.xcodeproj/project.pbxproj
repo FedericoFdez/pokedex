@@ -272,6 +272,7 @@
 		7A625E671C04764A00FF2C6E /* 249.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7A625D6C1C04764A00FF2C6E /* 249.gif */; };
 		7A625E681C04764A00FF2C6E /* 250.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7A625D6D1C04764A00FF2C6E /* 250.gif */; };
 		7A625E691C04764A00FF2C6E /* 251.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7A625D6E1C04764A00FF2C6E /* 251.gif */; };
+		7A7EFC0D1C0726AB0090D73F /* pokeball.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A7EFC0C1C0726AB0090D73F /* pokeball.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -563,6 +564,7 @@
 		7A625D6C1C04764A00FF2C6E /* 249.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = 249.gif; path = icon/249.gif; sourceTree = "<group>"; };
 		7A625D6D1C04764A00FF2C6E /* 250.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = 250.gif; path = icon/250.gif; sourceTree = "<group>"; };
 		7A625D6E1C04764A00FF2C6E /* 251.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = 251.gif; path = icon/251.gif; sourceTree = "<group>"; };
+		7A7EFC0C1C0726AB0090D73F /* pokeball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pokeball.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -651,6 +653,7 @@
 		7A625E6A1C04766900FF2C6E /* icon */ = {
 			isa = PBXGroup;
 			children = (
+				7A7EFC0C1C0726AB0090D73F /* pokeball.png */,
 				7A435B2E1C04F81E00AE0342 /* entrenador.png */,
 				7A625C741C04764700FF2C6E /* 001.gif */,
 				7A625C751C04764700FF2C6E /* 002.gif */,
@@ -1102,6 +1105,7 @@
 				7A625E401C04764A00FF2C6E /* 210.gif in Resources */,
 				7A625D891C04764A00FF2C6E /* 027.gif in Resources */,
 				7A625E4F1C04764A00FF2C6E /* 225.gif in Resources */,
+				7A7EFC0D1C0726AB0090D73F /* pokeball.png in Resources */,
 				7A625D8B1C04764A00FF2C6E /* 029.gif in Resources */,
 				7A625E191C04764A00FF2C6E /* 171.gif in Resources */,
 				7A625DBD1C04764A00FF2C6E /* 079.gif in Resources */,
