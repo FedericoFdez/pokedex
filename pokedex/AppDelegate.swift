@@ -12,6 +12,8 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
 
     var window: UIWindow?
+    
+    
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -49,12 +51,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     
     func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController:UIViewController, ontoPrimaryViewController primaryViewController:UIViewController) -> Bool {
         guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
-        guard let topAsWebViewController = secondaryAsNavController.topViewController as? WebViewController else { return false }
-        if topAsWebViewController.race == nil {
+        guard let topAsDetailController = secondaryAsNavController.topViewController as? WebViewController else { return false }
+        if topAsDetailController.race == nil {
             // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
             return true
         }
         return false
+
+    }
+    
+    func splitViewController(splitViewController: UISplitViewController, separateSecondaryViewControllerFromPrimaryViewController primaryViewController: UIViewController) -> UIViewController? {
+        print("A")
+        guard let primaryAsNavController = primaryViewController as? UINavigationController else { print("YES")
+        return nil }
+        if ((primaryAsNavController.topViewController as? TypeRacesTableViewController) != nil){
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            return storyboard.instantiateViewControllerWithIdentifier("Web View")
+        }
+        return nil
     }
 
 

@@ -72,7 +72,7 @@
         <scene sceneID="7Wo-Kn-Lzy">
             <objects>
                 <tableViewController id="WFK-2U-vcU" customClass="TypeRacesTableViewController" customModule="pokedex" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Blc-36-mjH">
+                    <tableView key="view" clipsSubviews="YES" contentMode="redraw" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Blc-36-mjH">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
@@ -157,12 +157,12 @@
         <!--Web View Controller-->
         <scene sceneID="bPp-we-tZH">
             <objects>
-                <viewController id="ixB-mm-CC3" customClass="WebViewController" customModule="pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Web View" id="ixB-mm-CC3" customClass="WebViewController" customModule="pokedex" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="co7-9V-IrL"/>
                         <viewControllerLayoutGuide type="bottom" id="DI3-33-crg"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="o8g-hM-yXK">
+                    <view key="view" contentMode="redraw" id="o8g-hM-yXK">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

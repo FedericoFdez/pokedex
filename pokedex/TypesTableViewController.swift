@@ -88,7 +88,6 @@ class TypesTableViewController: UITableViewController {
                         rvc.type = pokedexModel.types[ip.row]
                     }
                     
-                    rvc.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
                     rvc.navigationItem.leftItemsSupplementBackButton = true
             }
         }

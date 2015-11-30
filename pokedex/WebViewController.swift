@@ -32,7 +32,7 @@ class WebViewController: UIViewController {
             }
         } else {
             // Poner Pokedex como titulo de la Navigation Bar
-            title = "Pokedex"
+            title = "Pokédex"
         }
         
         if let url = NSURL(string: str) {

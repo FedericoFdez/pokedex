@@ -26,7 +26,7 @@ class TypeRacesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if showAll{
-            self.title = "Pokédex"
+            self.title = "Todos"
         } else {
             self.title = type!.name
         }
