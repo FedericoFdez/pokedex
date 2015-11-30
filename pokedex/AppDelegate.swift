@@ -66,7 +66,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         return nil }
         if ((primaryAsNavController.topViewController as? TypeRacesTableViewController) != nil){
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            return storyboard.instantiateViewControllerWithIdentifier("Web View")
+            let wvc = storyboard.instantiateViewControllerWithIdentifier("Web View")
+            wvc.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
+            wvc.navigationItem.leftItemsSupplementBackButton = true
+            return wvc
         }
         return nil
     }

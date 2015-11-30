@@ -9,7 +9,7 @@
         <!--Navigation Controller-->
         <scene sceneID="y0r-fn-yse">
             <objects>
-                <navigationController id="wCi-nX-bRi" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Web View" id="wCi-nX-bRi" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oas-gT-uMk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -154,10 +154,10 @@
             </objects>
             <point key="canvasLocation" x="221" y="125"/>
         </scene>
-        <!--Web View Controller-->
+        <!--Pokédex-->
         <scene sceneID="bPp-we-tZH">
             <objects>
-                <viewController storyboardIdentifier="Web View" id="ixB-mm-CC3" customClass="WebViewController" customModule="pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ixB-mm-CC3" customClass="WebViewController" customModule="pokedex" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="co7-9V-IrL"/>
                         <viewControllerLayoutGuide type="bottom" id="DI3-33-crg"/>
@@ -181,7 +181,7 @@
                             <constraint firstItem="Vhg-Ha-ROg" firstAttribute="leading" secondItem="o8g-hM-yXK" secondAttribute="leadingMargin" id="Ryc-pP-Fyn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="9de-Qq-tQv"/>
+                    <navigationItem key="navigationItem" title="Pokédex" id="9de-Qq-tQv"/>
                     <connections>
                         <outlet property="webView" destination="Vhg-Ha-ROg" id="vEy-tv-aS4"/>
                     </connections>
