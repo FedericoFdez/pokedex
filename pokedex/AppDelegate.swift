@@ -61,9 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     }
     
     func splitViewController(splitViewController: UISplitViewController, separateSecondaryViewControllerFromPrimaryViewController primaryViewController: UIViewController) -> UIViewController? {
-        print("A")
-        guard let primaryAsNavController = primaryViewController as? UINavigationController else { print("YES")
-        return nil }
+        guard let primaryAsNavController = primaryViewController as? UINavigationController else {return nil }
         if ((primaryAsNavController.topViewController as? TypeRacesTableViewController) != nil){
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let wvc = storyboard.instantiateViewControllerWithIdentifier("Web View")
